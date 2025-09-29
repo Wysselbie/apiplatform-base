@@ -1,0 +1,54 @@
+{
+  "name": "apiplatform-base",
+  "description": "A comprehensive base Docker image for API Platform applications built on PHP 8.3 FPM with essential system dependencies, PHP extensions, and development tools",
+  "version": "1.0.0",
+  "php_version": "8.3",
+  "base_image": "php:8.3-fpm",
+  "registry": {
+    "github": "ghcr.io",
+    "dockerhub": "docker.io"
+  },
+  "tags": [
+    "latest",
+    "php8.3",
+    "php8.3-1.0.0",
+    "1.0.0"
+  ],
+  "labels": {
+    "org.opencontainers.image.title": "API Platform Base",
+    "org.opencontainers.image.description": "Base Docker image for API Platform applications with PHP 8.3 FPM",
+    "org.opencontainers.image.version": "1.0.0",
+    "org.opencontainers.image.vendor": "API Platform Community",
+    "org.opencontainers.image.licenses": "MIT",
+    "org.opencontainers.image.source": "https://github.com/Wysselbie/apiplatform-base",
+    "org.opencontainers.image.documentation": "https://github.com/Wysselbie/apiplatform-base#readme"
+  },
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".",
+    "platforms": [
+      "linux/amd64",
+      "linux/arm64"
+    ]
+  },
+  "components": {
+    "php_extensions": [
+      "pdo_mysql",
+      "pdo_pgsql", 
+      "mbstring",
+      "exif",
+      "pcntl",
+      "bcmath",
+      "gd",
+      "zip",
+      "intl"
+    ],
+    "system_packages": [
+      "git",
+      "curl",
+      "nginx",
+      "supervisor",
+      "composer"
+    ]
+  }
+}
